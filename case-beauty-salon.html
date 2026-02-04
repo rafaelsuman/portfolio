@@ -4,9 +4,279 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beauty Salon BI System - Case Study</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/case.css">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px 0;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .back-link {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .back-link:hover {
+      color: #f59e0b;
+    }
+
+    /* Hero */
+    .case-hero {
+      padding: 80px 0 60px;
+      background: linear-gradient(135deg, #2563eb 0%, #1e293b 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .case-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .case-tags span {
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .case-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+    .section {
+      padding: 80px 0;
+    }
+
+    .section.gray {
+      background: #f8fafc;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      color: #1e293b;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto 32px;
+    }
+
+    /* Pain Points Grid */
+    .pain-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .pain-item {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .pain-item h3 {
+      color: #1e293b;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+
+    /* Images */
+    .full-img {
+      width: 100%;
+      max-width: 1000px;
+      margin: 40px auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    /* Architecture Details */
+    .arch-details {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      margin-top: 40px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .arch-details h3 {
+      color: #2563eb;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .arch-details ul {
+      line-height: 2;
+    }
+
+    .arch-details li {
+      margin-bottom: 12px;
+    }
+
+    .arch-details strong {
+      color: #1e293b;
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .feature h3 {
+      color: #1e293b;
+      margin-bottom: 16px;
+      font-size: 1.3rem;
+    }
+
+    /* Metrics */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin: 60px 0;
+    }
+
+    .metric {
+      background: white;
+      padding: 32px 24px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .metric-value {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+
+    .metric-label {
+      color: #334155;
+      font-size: 0.95rem;
+    }
+
+    /* Tech Stack */
+    .tech-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .tech-item {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .tech-item strong {
+      color: #2563eb;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #2563eb 0%, #1e293b 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 32px;
+      color: white;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #f59e0b;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .case-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section h2 {
+        font-size: 2rem;
+      }
+      
+      .metric-value {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -26,9 +296,9 @@
         <span>Power BI</span>
         <span>WhatsApp</span>
       </div>
-      <h1 data-aos="fade-up">Beauty Salon BI System</h1>
-      <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
-        Automated data pipeline processing 500+ daily transactions with real-time analytics
+      <h1>Beauty Salon BI System</h1>
+      <p class="subtitle">
+        Automated data pipeline processing 500+ daily transactions with real-time analytics and client retention tracking
       </p>
     </div>
   </section>
@@ -36,23 +306,27 @@
   <!-- Challenge -->
   <section class="section">
     <div class="container">
-      <h2 data-aos="fade-up">The Challenge</h2>
-      <p data-aos="fade-up">
+      <h2>The Challenge</h2>
+      <p>
         A beauty salon using the Trinks platform needed real-time visibility into business operations, 
-        professional performance tracking, and proactive client retention management.
+        professional performance tracking, and proactive client retention management to stay competitive 
+        in a crowded market.
       </p>
-      <div class="pain-points" data-aos="fade-up">
+      
+      <div class="pain-points">
         <div class="pain-item">
           <h3>📊 No Data Visibility</h3>
-          <p>Manual spreadsheet updates were error-prone and time-consuming</p>
+          <p>Manual spreadsheet updates were error-prone, time-consuming, and always outdated by the time they were completed.</p>
         </div>
+        
         <div class="pain-item">
           <h3>👥 Performance Tracking</h3>
-          <p>No way to track individual professional revenue and productivity</p>
+          <p>No way to accurately track individual professional revenue contribution and productivity metrics.</p>
         </div>
+        
         <div class="pain-item">
           <h3>🔄 Client Retention</h3>
-          <p>Reactive approach - only noticed churned clients after they left</p>
+          <p>Reactive approach to client retention - only noticed churned clients after they had already left.</p>
         </div>
       </div>
     </div>
@@ -61,12 +335,12 @@
   <!-- Solution -->
   <section class="section gray">
     <div class="container">
-      <h2 data-aos="fade-up">The Solution</h2>
-      <img src="assets/images/salon-flow.png" alt="System Architecture" class="full-img" data-aos="fade-up">
-      <p data-aos="fade-up">
-        Built a complete end-to-end BI pipeline that automatically extracts data from Trinks API, 
-        transforms it through N8N workflows, stores it in a MySQL data warehouse, and delivers 
-        insights via Power BI dashboards and WhatsApp reports.
+      <h2>The Solution</h2>
+      <img src="assets/images/salon-flow.png" alt="System Architecture" class="full-img">
+      <p>
+        Built a complete end-to-end BI pipeline that automatically extracts data from Trinks API every morning, 
+        transforms it through N8N workflows, stores it in a MySQL data warehouse with constellation schema, 
+        and delivers insights via Power BI dashboards and automated WhatsApp reports to the salon owner.
       </p>
     </div>
   </section>
@@ -74,18 +348,18 @@
   <!-- Architecture -->
   <section class="section">
     <div class="container">
-      <h2 data-aos="fade-up">Data Warehouse Architecture</h2>
-      <img src="assets/images/salon-schema.png" alt="Database Schema" class="full-img" data-aos="fade-up">
+      <h2>Data Warehouse Architecture</h2>
+      <img src="assets/images/salon-schema.png" alt="Database Schema" class="full-img">
       
-      <div class="arch-details" data-aos="fade-up">
+      <div class="arch-details">
         <h3>Constellation Schema Design</h3>
         <ul>
-          <li><strong>DIM_CLIENTES:</strong> Customer dimension with retention status tracking</li>
-          <li><strong>DIM_PROFISSIONAIS:</strong> Professional dimension with performance metrics</li>
-          <li><strong>DIM_SERVICOS:</strong> Service catalog with pricing and categories</li>
-          <li><strong>FATO_TRANSACOES:</strong> Transaction fact table (header level)</li>
-          <li><strong>FATO_TRANSACOES_SERVICOS:</strong> Service line items with proportional revenue attribution</li>
-          <li><strong>FATO_TRANSACOES_PRODUTOS:</strong> Product line items</li>
+          <li><strong>DIM_CLIENTES:</strong> Customer dimension with status tracking (Active/At Risk/Inactive based on visit recency)</li>
+          <li><strong>DIM_PROFISSIONAIS:</strong> Professional dimension with performance metrics and earnings data</li>
+          <li><strong>DIM_SERVICOS:</strong> Service catalog with pricing, categories, and duration information</li>
+          <li><strong>FATO_TRANSACOES:</strong> Transaction fact table at header level with totals and discounts</li>
+          <li><strong>FATO_TRANSACOES_SERVICOS:</strong> Service line items with proportional revenue attribution algorithm</li>
+          <li><strong>FATO_TRANSACOES_PRODUTOS:</strong> Product line items with quantity and pricing</li>
         </ul>
       </div>
     </div>
@@ -94,27 +368,27 @@
   <!-- Key Features -->
   <section class="section gray">
     <div class="container">
-      <h2 data-aos="fade-up">Key Features</h2>
+      <h2>Key Features</h2>
       
       <div class="features-grid">
-        <div class="feature" data-aos="fade-up">
+        <div class="feature">
           <h3>⚡ Automated Pipeline</h3>
-          <p>Runs daily at 7 AM, fetching last 48h of transactions. Processes 500-800 records with zero manual intervention.</p>
+          <p>Runs daily at 7 AM, fetching the last 48 hours of transactions. Processes 500-800 records daily with zero manual intervention and automatic error notifications via WhatsApp.</p>
         </div>
         
-        <div class="feature" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature">
           <h3>💰 Revenue Attribution</h3>
-          <p>Proportional algorithm distributes transaction value across services based on price ratio, enabling accurate professional earnings tracking.</p>
+          <p>Proprietary proportional algorithm distributes total transaction value across services based on price ratio, enabling accurate professional earnings tracking even for shared transactions.</p>
         </div>
         
-        <div class="feature" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature">
           <h3>📱 WhatsApp Reports</h3>
-          <p>Owner receives automated weekly reports with key metrics and at-risk client alerts directly on WhatsApp.</p>
+          <p>Owner receives automated weekly reports with key metrics, top performers, at-risk client alerts, and revenue trends directly on WhatsApp.</p>
         </div>
         
-        <div class="feature" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature">
           <h3>🎯 Client Retention</h3>
-          <p>Automatic status classification: Active (≤40 days), At Risk (41-90 days), Inactive (>90 days).</p>
+          <p>Automatic status classification system: Active (≤40 days since last visit), At Risk (41-90 days), Inactive (>90 days). Enables proactive retention campaigns.</p>
         </div>
       </div>
     </div>
@@ -123,54 +397,66 @@
   <!-- Results -->
   <section class="section">
     <div class="container">
-      <h2 data-aos="fade-up">Results & Impact</h2>
+      <h2>Results & Business Impact</h2>
       
       <div class="metrics">
-        <div class="metric" data-aos="fade-up">
+        <div class="metric">
           <div class="metric-value">49.7%</div>
           <div class="metric-label">Client Recurrence Rate</div>
         </div>
-        <div class="metric" data-aos="fade-up" data-aos-delay="50">
+        <div class="metric">
           <div class="metric-value">258</div>
           <div class="metric-label">Unique Clients/Month</div>
         </div>
-        <div class="metric" data-aos="fade-up" data-aos-delay="100">
+        <div class="metric">
           <div class="metric-value">R$ 50.6K</div>
           <div class="metric-label">Monthly Revenue Tracked</div>
         </div>
-        <div class="metric" data-aos="fade-up" data-aos-delay="150">
+        <div class="metric">
           <div class="metric-value">100%</div>
           <div class="metric-label">Automation Rate</div>
         </div>
       </div>
 
-      <img src="assets/images/salon-dashboard.png" alt="Power BI Dashboard" class="full-img" data-aos="fade-up">
+      <img src="assets/images/salon-dashboard.png" alt="Power BI Dashboard" class="full-img">
+      
+      <p style="margin-top: 40px;">
+        The dashboard provides real-time insights into revenue by day of week, top-performing services, 
+        professional productivity comparison, month-over-month growth trends, and client retention metrics. 
+        Interactive filters allow deep-dive analysis by time period, professional, and service type.
+      </p>
     </div>
   </section>
 
   <!-- Tech Stack -->
   <section class="section gray">
     <div class="container">
-      <h2 data-aos="fade-up">Technical Stack</h2>
+      <h2>Technical Stack</h2>
       
-      <div class="tech-stack" data-aos="fade-up">
+      <div class="tech-stack">
         <div class="tech-item">
-          <strong>Data Source:</strong> Trinks REST API
+          <strong>Data Source</strong>
+          <p>Trinks REST API - Beauty salon management platform</p>
         </div>
         <div class="tech-item">
-          <strong>ETL:</strong> N8N (self-hosted workflows)
+          <strong>ETL Layer</strong>
+          <p>N8N - Self-hosted workflow automation with custom JavaScript transformations</p>
         </div>
         <div class="tech-item">
-          <strong>Storage:</strong> MySQL 8.0 (data warehouse)
+          <strong>Data Warehouse</strong>
+          <p>MySQL 8.0 - Constellation schema with 6 tables optimized for analytical queries</p>
         </div>
         <div class="tech-item">
-          <strong>Visualization:</strong> Power BI (DirectQuery)
+          <strong>Visualization</strong>
+          <p>Power BI - DirectQuery mode for real-time dashboard updates</p>
         </div>
         <div class="tech-item">
-          <strong>Notifications:</strong> WhatsApp via Evolution API
+          <strong>Notifications</strong>
+          <p>WhatsApp Business API - Automated reports and error alerts via Evolution API</p>
         </div>
         <div class="tech-item">
-          <strong>Hosting:</strong> VPS Ubuntu + Docker
+          <strong>Infrastructure</strong>
+          <p>VPS Ubuntu 24 + Docker - Self-hosted for full control and data privacy</p>
         </div>
       </div>
     </div>
@@ -179,14 +465,10 @@
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
-      <h2 data-aos="fade-up">Interested in a similar solution?</h2>
-      <a href="index.html#contact" class="cta-button" data-aos="fade-up" data-aos-delay="100">
-        Get in Touch
-      </a>
+      <h2>Interested in a Similar Solution?</h2>
+      <a href="index.html#contact" class="cta-button">Get in Touch</a>
     </div>
   </section>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
