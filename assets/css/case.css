@@ -1,0 +1,224 @@
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px 0;
+  z-index: 100;
+}
+
+.back-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+/* Case Hero */
+.case-hero {
+  padding: 80px 0 60px;
+  background: linear-gradient(135deg, #2563eb 0%, #1e293b 100%);
+  color: white;
+  text-align: center;
+}
+
+.case-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.case-tags span {
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.case-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Sections */
+.section {
+  padding: 80px 0;
+}
+
+.section.gray {
+  background: var(--surface);
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  color: var(--secondary);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 32px;
+}
+
+/* Pain Points */
+.pain-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.pain-item {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.pain-item h3 {
+  color: var(--secondary);
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+/* Full Width Image */
+.full-img {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Architecture Details */
+.arch-details {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.arch-details h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.arch-details ul {
+  list-style-position: inside;
+  line-height: 2;
+}
+
+.arch-details li {
+  margin-bottom: 12px;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.feature {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.feature h3 {
+  color: var(--secondary);
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+/* Metrics */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin: 60px 0;
+}
+
+.metric {
+  background: white;
+  padding: 32px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.metric-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.metric-label {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+/* Tech Stack */
+.tech-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.tech-item {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.tech-item strong {
+  color: var(--primary);
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #2563eb 0%, #1e293b 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 32px;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pain-points,
+  .features-grid,
+  .metrics,
+  .tech-stack {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Salon BI System - Case Study</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/case.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="case-tags">
+        <span>N8N</span>
+        <span>MySQL</span>
+        <span>Power BI</span>
+        <span>WhatsApp</span>
+      </div>
+      <h1 data-aos="fade-up">Beauty Salon BI System</h1>
+      <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
+        Automated data pipeline processing 500+ daily transactions with real-time analytics
+      </p>
+    </div>
+  </section>
+
+  <!-- Challenge -->
+  <section class="section">
+    <div class="container">
+      <h2 data-aos="fade-up">The Challenge</h2>
+      <p data-aos="fade-up">
+        A beauty salon using the Trinks platform needed real-time visibility into business operations, 
+        professional performance tracking, and proactive client retention management.
+      </p>
+      <div class="pain-points" data-aos="fade-up">
+        <div class="pain-item">
+          <h3>📊 No Data Visibility</h3>
+          <p>Manual spreadsheet updates were error-prone and time-consuming</p>
+        </div>
+        <div class="pain-item">
+          <h3>👥 Performance Tracking</h3>
+          <p>No way to track individual professional revenue and productivity</p>
+        </div>
+        <div class="pain-item">
+          <h3>🔄 Client Retention</h3>
+          <p>Reactive approach - only noticed churned clients after they left</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="section gray">
+    <div class="container">
+      <h2 data-aos="fade-up">The Solution</h2>
+      <img src="assets/images/salon-flow.png" alt="System Architecture" class="full-img" data-aos="fade-up">
+      <p data-aos="fade-up">
+        Built a complete end-to-end BI pipeline that automatically extracts data from Trinks API, 
+        transforms it through N8N workflows, stores it in a MySQL data warehouse, and delivers 
+        insights via Power BI dashboards and WhatsApp reports.
+      </p>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="section">
+    <div class="container">
+      <h2 data-aos="fade-up">Data Warehouse Architecture</h2>
+      <img src="assets/images/salon-schema.png" alt="Database Schema" class="full-img" data-aos="fade-up">
+      
+      <div class="arch-details" data-aos="fade-up">
+        <h3>Constellation Schema Design</h3>
+        <ul>
+          <li><strong>DIM_CLIENTES:</strong> Customer dimension with retention status tracking</li>
+          <li><strong>DIM_PROFISSIONAIS:</strong> Professional dimension with performance metrics</li>
+          <li><strong>DIM_SERVICOS:</strong> Service catalog with pricing and categories</li>
+          <li><strong>FATO_TRANSACOES:</strong> Transaction fact table (header level)</li>
+          <li><strong>FATO_TRANSACOES_SERVICOS:</strong> Service line items with proportional revenue attribution</li>
+          <li><strong>FATO_TRANSACOES_PRODUTOS:</strong> Product line items</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features -->
+  <section class="section gray">
+    <div class="container">
+      <h2 data-aos="fade-up">Key Features</h2>
+      
+      <div class="features-grid">
+        <div class="feature" data-aos="fade-up">
+          <h3>⚡ Automated Pipeline</h3>
+          <p>Runs daily at 7 AM, fetching last 48h of transactions. Processes 500-800 records with zero manual intervention.</p>
+        </div>
+        
+        <div class="feature" data-aos="fade-up" data-aos-delay="100">
+          <h3>💰 Revenue Attribution</h3>
+          <p>Proportional algorithm distributes transaction value across services based on price ratio, enabling accurate professional earnings tracking.</p>
+        </div>
+        
+        <div class="feature" data-aos="fade-up" data-aos-delay="200">
+          <h3>📱 WhatsApp Reports</h3>
+          <p>Owner receives automated weekly reports with key metrics and at-risk client alerts directly on WhatsApp.</p>
+        </div>
+        
+        <div class="feature" data-aos="fade-up" data-aos-delay="300">
+          <h3>🎯 Client Retention</h3>
+          <p>Automatic status classification: Active (≤40 days), At Risk (41-90 days), Inactive (>90 days).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section">
+    <div class="container">
+      <h2 data-aos="fade-up">Results & Impact</h2>
+      
+      <div class="metrics">
+        <div class="metric" data-aos="fade-up">
+          <div class="metric-value">49.7%</div>
+          <div class="metric-label">Client Recurrence Rate</div>
+        </div>
+        <div class="metric" data-aos="fade-up" data-aos-delay="50">
+          <div class="metric-value">258</div>
+          <div class="metric-label">Unique Clients/Month</div>
+        </div>
+        <div class="metric" data-aos="fade-up" data-aos-delay="100">
+          <div class="metric-value">R$ 50.6K</div>
+          <div class="metric-label">Monthly Revenue Tracked</div>
+        </div>
+        <div class="metric" data-aos="fade-up" data-aos-delay="150">
+          <div class="metric-value">100%</div>
+          <div class="metric-label">Automation Rate</div>
+        </div>
+      </div>
+
+      <img src="assets/images/salon-dashboard.png" alt="Power BI Dashboard" class="full-img" data-aos="fade-up">
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="section gray">
+    <div class="container">
+      <h2 data-aos="fade-up">Technical Stack</h2>
+      
+      <div class="tech-stack" data-aos="fade-up">
+        <div class="tech-item">
+          <strong>Data Source:</strong> Trinks REST API
+        </div>
+        <div class="tech-item">
+          <strong>ETL:</strong> N8N (self-hosted workflows)
+        </div>
+        <div class="tech-item">
+          <strong>Storage:</strong> MySQL 8.0 (data warehouse)
+        </div>
+        <div class="tech-item">
+          <strong>Visualization:</strong> Power BI (DirectQuery)
+        </div>
+        <div class="tech-item">
+          <strong>Notifications:</strong> WhatsApp via Evolution API
+        </div>
+        <div class="tech-item">
+          <strong>Hosting:</strong> VPS Ubuntu + Docker
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 data-aos="fade-up">Interested in a similar solution?</h2>
+      <a href="index.html#contact" class="cta-button" data-aos="fade-up" data-aos-delay="100">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
