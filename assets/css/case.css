@@ -1,27 +1,51 @@
-/* Navbar */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  background: #ffffff;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Navbar Dark (combina com index) */
 .navbar {
   position: sticky;
   top: 0;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.2);
   padding: 20px 0;
   z-index: 100;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
 }
 
 .back-link {
-  color: var(--primary);
+  color: #06b6d4;
   text-decoration: none;
   font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s;
 }
 
 .back-link:hover {
-  color: var(--accent);
+  color: #0891b2;
 }
 
-/* Case Hero */
+/* Hero com Cyan */
 .case-hero {
-  padding: 80px 0 60px;
-  background: linear-gradient(135deg, #2563eb 0%, #1e293b 100%);
+  padding: 100px 0 80px;
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0a1628 100%);
   color: white;
   text-align: center;
 }
@@ -31,190 +55,300 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .case-tags span {
-  padding: 8px 16px;
+  padding: 10px 20px;
   background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
   border-radius: 20px;
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .case-hero h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: 16px;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 24px;
+  font-weight: 700;
 }
 
 .subtitle {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  opacity: 0.9;
-  max-width: 700px;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  opacity: 0.95;
+  max-width: 800px;
   margin: 0 auto;
+  line-height: 1.8;
 }
 
-/* Sections */
+/* Sections Light */
 .section {
-  padding: 80px 0;
+  padding: 100px 0;
+  background: #ffffff;
 }
 
 .section.gray {
-  background: var(--surface);
+  background: #f8fafc;
 }
 
 .section h2 {
-  font-size: 2.5rem;
-  color: var(--secondary);
-  margin-bottom: 32px;
+  font-size: 3rem;
+  color: #1e293b;
+  margin-bottom: 48px;
   text-align: center;
 }
 
+.section h2 span {
+  color: #06b6d4;
+}
+
 .section p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  max-width: 800px;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  max-width: 900px;
   margin: 0 auto 32px;
+  color: #475569;
 }
 
 /* Pain Points */
 .pain-points {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .pain-item {
   background: white;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 40px;
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s;
+}
+
+.pain-item:hover {
+  border-color: #06b6d4;
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
+  transform: translateY(-4px);
 }
 
 .pain-item h3 {
-  color: var(--secondary);
-  margin-bottom: 12px;
-  font-size: 1.2rem;
+  color: #1e293b;
+  margin-bottom: 16px;
+  font-size: 1.4rem;
 }
 
-/* Full Width Image */
+.pain-item p {
+  color: #64748b;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Images */
 .full-img {
   width: 100%;
-  max-width: 1000px;
-  margin: 40px auto;
+  max-width: 1100px;
+  margin: 60px auto;
   display: block;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  border: 1px solid #e2e8f0;
 }
 
 /* Architecture Details */
 .arch-details {
   background: white;
-  padding: 32px;
-  border-radius: 12px;
-  margin-top: 40px;
+  padding: 48px;
+  border-radius: 16px;
+  margin-top: 60px;
+  border: 2px solid #e2e8f0;
 }
 
 .arch-details h3 {
-  color: var(--primary);
-  margin-bottom: 20px;
+  color: #06b6d4;
+  margin-bottom: 32px;
+  font-size: 1.8rem;
 }
 
 .arch-details ul {
-  list-style-position: inside;
-  line-height: 2;
+  line-height: 2.2;
 }
 
 .arch-details li {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+  color: #475569;
+}
+
+.arch-details strong {
+  color: #1e293b;
+  font-weight: 600;
 }
 
 /* Features Grid */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .feature {
   background: white;
-  padding: 32px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 40px;
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s;
+}
+
+.feature:hover {
+  border-color: #06b6d4;
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
+  transform: translateY(-8px);
 }
 
 .feature h3 {
-  color: var(--secondary);
+  color: #1e293b;
   margin-bottom: 16px;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
-/* Metrics */
+.feature p {
+  color: #64748b;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Metrics com Cyan */
 .metrics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-  margin: 60px 0;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin: 80px 0;
 }
 
 .metric {
   background: white;
-  padding: 32px 24px;
-  border-radius: 12px;
+  padding: 48px 32px;
+  border-radius: 16px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s;
+}
+
+.metric:hover {
+  border-color: #06b6d4;
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
+  transform: translateY(-8px);
 }
 
 .metric-value {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 8px;
+  color: #06b6d4;
+  margin-bottom: 12px;
 }
 
 .metric-label {
-  color: var(--text);
-  font-size: 0.95rem;
+  color: #64748b;
+  font-size: 1rem;
 }
 
 /* Tech Stack */
 .tech-stack {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 60px;
 }
 
 .tech-item {
   background: white;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 32px;
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s;
+}
+
+.tech-item:hover {
+  border-color: #06b6d4;
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.15);
+  transform: translateY(-4px);
 }
 
 .tech-item strong {
-  color: var(--primary);
+  color: #06b6d4;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
 }
 
-/* CTA Section */
+.tech-item p {
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* CTA Section com Cyan */
 .cta-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #2563eb 0%, #1e293b 100%);
+  padding: 120px 0;
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0a1628 100%);
   color: white;
   text-align: center;
 }
 
 .cta-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 32px;
+  font-size: 3rem;
+  margin-bottom: 40px;
   color: white;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 18px 48px;
+  background: white;
+  color: #0a1628;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+  background: #f8fafc;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* Footer Dark (combina com index) */
+.footer {
+  padding: 40px 0;
+  background: #0f1f3a;
+  border-top: 1px solid rgba(6, 182, 212, 0.1);
+  text-align: center;
+}
+
+.footer p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .case-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section h2 {
+    font-size: 2rem;
+  }
+  
+  .metric-value {
+    font-size: 2.5rem;
+  }
+  
   .pain-points,
   .features-grid,
   .metrics,
