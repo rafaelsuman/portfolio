@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#0f2040"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#25d366"/>
+      <stop offset="100%" style="stop-color:#128c7e"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.4)"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.04">
+    <line x1="0" y1="50" x2="1200" y2="50" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="0" y1="150" x2="1200" y2="150" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="0" y1="250" x2="1200" y2="250" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="0" y1="300" x2="1200" y2="300" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="0" y1="350" x2="1200" y2="350" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="400" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="400" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="400" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="400" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="500" y1="0" x2="500" y2="400" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="400" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="700" y1="0" x2="700" y2="400" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="800" y1="0" x2="800" y2="400" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="900" y1="0" x2="900" y2="400" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="1000" y1="0" x2="1000" y2="400" stroke="#06b6d4" stroke-width="1"/>
+    <line x1="1100" y1="0" x2="1100" y2="400" stroke="#06b6d4" stroke-width="1"/>
+  </g>
+
+  <!-- LEFT: Phone mockup -->
+  <g transform="translate(80, 40)" filter="url(#shadow)">
+    <!-- Phone body -->
+    <rect x="0" y="0" width="220" height="320" rx="24" fill="#111d2e" stroke="rgba(6,182,212,0.3)" stroke-width="1.5"/>
+    <!-- WhatsApp header -->
+    <rect x="0" y="0" width="220" height="52" rx="24" fill="url(#green)"/>
+    <rect x="0" y="28" width="220" height="24" fill="#128c7e"/>
+    <!-- Header text -->
+    <circle cx="32" cy="26" r="14" fill="rgba(255,255,255,0.25)"/>
+    <text x="32" y="31" font-family="Arial" font-size="13" fill="white" text-anchor="middle">AI</text>
+    <text x="56" y="22" font-family="Arial" font-size="11" fill="white" font-weight="bold">Support Agent</text>
+    <text x="56" y="35" font-family="Arial" font-size="9" fill="rgba(255,255,255,0.8)">online</text>
+    <!-- Incoming message 1 -->
+    <rect x="10" y="62" width="140" height="32" rx="8" fill="#1f2d3d"/>
+    <text x="18" y="80" font-family="Arial" font-size="10" fill="#e2e8f0">What time does the movie start?</text>
+    <text x="138" y="90" font-family="Arial" font-size="8" fill="#64748b">14:32</text>
+    <!-- Outgoing message 1 -->
+    <rect x="60" y="103" width="152" height="44" rx="8" fill="#005c4b"/>
+    <text x="68" y="119" font-family="Arial" font-size="10" fill="#e2e8f0">The next session starts at</text>
+    <text x="68" y="132" font-family="Arial" font-size="10" fill="#e2e8f0">15:00. Want the link? 🎬</text>
+    <text x="198" y="143" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.5)">14:32</text>
+    <!-- Incoming message 2 -->
+    <rect x="10" y="156" width="100" height="26" rx="8" fill="#1f2d3d"/>
+    <text x="18" y="173" font-family="Arial" font-size="10" fill="#e2e8f0">Yes please!</text>
+    <text x="98" y="178" font-family="Arial" font-size="8" fill="#64748b">14:33</text>
+    <!-- Outgoing message 2 -->
+    <rect x="30" y="191" width="182" height="44" rx="8" fill="#005c4b"/>
+    <text x="38" y="207" font-family="Arial" font-size="10" fill="#06b6d4">https://tickets.app/s/15h</text>
+    <text x="38" y="222" font-family="Arial" font-size="10" fill="#e2e8f0">Enjoy the movie! 🍿</text>
+    <text x="198" y="231" font-family="Arial" font-size="8" fill="rgba(255,255,255,0.5)">14:33</text>
+    <!-- Incoming message 3 -->
+    <rect x="10" y="244" width="140" height="26" rx="8" fill="#1f2d3d"/>
+    <text x="18" y="261" font-family="Arial" font-size="10" fill="#e2e8f0">I need to speak to someone</text>
+    <text x="138" y="266" font-family="Arial" font-size="8" fill="#64748b">14:35</text>
+    <!-- Handoff message -->
+    <rect x="20" y="279" width="180" height="30" rx="8" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
+    <text x="110" y="296" font-family="Arial" font-size="9" fill="#06b6d4" text-anchor="middle">Connecting to a human agent...</text>
+    <!-- Input bar -->
+    <rect x="8" y="295" width="204" height="18" rx="9" fill="#1f2d3d" opacity="0"/>
+  </g>
+
+  <!-- CENTER: Flow arrows -->
+  <!-- Arrow 1: Phone to n8n -->
+  <g opacity="0.9">
+    <line x1="310" y1="200" x2="400" y2="200" stroke="#25d366" stroke-width="2" stroke-dasharray="6,3"/>
+    <polygon points="400,194 412,200 400,206" fill="#25d366"/>
+    <text x="355" y="190" font-family="Arial" font-size="10" fill="#25d366" text-anchor="middle">message</text>
+  </g>
+
+  <!-- n8n node -->
+  <g transform="translate(420, 160)" filter="url(#shadow)">
+    <rect x="0" y="0" width="100" height="80" rx="12" fill="#1a2d4a" stroke="rgba(6,182,212,0.5)" stroke-width="1.5"/>
+    <text x="50" y="28" font-family="Arial" font-size="22" text-anchor="middle">⚙️</text>
+    <text x="50" y="52" font-family="Arial" font-size="13" fill="#06b6d4" text-anchor="middle" font-weight="bold">n8n</text>
+    <text x="50" y="68" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">orchestrator</text>
+  </g>
+
+  <!-- Arrow: n8n to OpenAI -->
+  <line x1="520" y1="180" x2="600" y2="140" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="596,133 608,138 600,148" fill="#8b5cf6"/>
+  <text x="558" y="153" font-family="Arial" font-size="9" fill="#8b5cf6" text-anchor="middle">prompt</text>
+
+  <!-- Arrow: n8n to PostgreSQL -->
+  <line x1="520" y1="220" x2="600" y2="260" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="596,252 608,260 598,268" fill="#f59e0b"/>
+  <text x="558" y="250" font-family="Arial" font-size="9" fill="#f59e0b" text-anchor="middle">session</text>
+
+  <!-- OpenAI node -->
+  <g transform="translate(618, 100)" filter="url(#shadow)">
+    <rect x="0" y="0" width="100" height="76" rx="12" fill="#1a2d4a" stroke="rgba(139,92,246,0.5)" stroke-width="1.5"/>
+    <text x="50" y="26" font-family="Arial" font-size="20" text-anchor="middle">🤖</text>
+    <text x="50" y="48" font-family="Arial" font-size="12" fill="#a78bfa" text-anchor="middle" font-weight="bold">OpenAI</text>
+    <text x="50" y="63" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">GPT + Whisper</text>
+  </g>
+
+  <!-- PostgreSQL node -->
+  <g transform="translate(618, 240)" filter="url(#shadow)">
+    <rect x="0" y="0" width="100" height="76" rx="12" fill="#1a2d4a" stroke="rgba(245,158,11,0.5)" stroke-width="1.5"/>
+    <text x="50" y="26" font-family="Arial" font-size="20" text-anchor="middle">🗄️</text>
+    <text x="50" y="48" font-family="Arial" font-size="12" fill="#fbbf24" text-anchor="middle" font-weight="bold">PostgreSQL</text>
+    <text x="50" y="63" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">20K+ sessions</text>
+  </g>
+
+  <!-- Arrow: OpenAI back to n8n -->
+  <line x1="618" y1="148" x2="540" y2="185" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="547,179 537,186 543,196" fill="#8b5cf6"/>
+
+  <!-- Arrow: n8n to Chatwoot (handoff) -->
+  <line x1="520" y1="200" x2="750" y2="200" stroke="#06b6d4" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="750,194 762,200 750,206" fill="#06b6d4"/>
+  <text x="636" y="190" font-family="Arial" font-size="9" fill="#06b6d4" text-anchor="middle">handoff</text>
+
+  <!-- Chatwoot node -->
+  <g transform="translate(770, 160)" filter="url(#shadow)">
+    <rect x="0" y="0" width="100" height="80" rx="12" fill="#1a2d4a" stroke="rgba(6,182,212,0.5)" stroke-width="1.5"/>
+    <text x="50" y="28" font-family="Arial" font-size="22" text-anchor="middle">💬</text>
+    <text x="50" y="52" font-family="Arial" font-size="12" fill="#06b6d4" text-anchor="middle" font-weight="bold">Chatwoot</text>
+    <text x="50" y="67" font-family="Arial" font-size="9" fill="#64748b" text-anchor="middle">human agents</text>
+  </g>
+
+  <!-- RIGHT: Stats panel -->
+  <g transform="translate(920, 50)">
+    <rect x="0" y="0" width="240" height="300" rx="16" fill="rgba(15,31,58,0.8)" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
+    <text x="120" y="32" font-family="Arial" font-size="13" fill="#06b6d4" text-anchor="middle" font-weight="bold">SYSTEM STATUS</text>
+    <line x1="20" y1="44" x2="220" y2="44" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
+
+    <!-- Stat 1 -->
+    <text x="20" y="72" font-family="Arial" font-size="11" fill="#94a3b8">Active Sessions</text>
+    <text x="220" y="72" font-family="Arial" font-size="13" fill="#25d366" text-anchor="end" font-weight="bold">247</text>
+    <rect x="20" y="78" width="200" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+    <rect x="20" y="78" width="148" height="4" rx="2" fill="url(#green)"/>
+
+    <!-- Stat 2 -->
+    <text x="20" y="108" font-family="Arial" font-size="11" fill="#94a3b8">Resolved by AI</text>
+    <text x="220" y="108" font-family="Arial" font-size="13" fill="#06b6d4" text-anchor="end" font-weight="bold">94%</text>
+    <rect x="20" y="114" width="200" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+    <rect x="20" y="114" width="188" height="4" rx="2" fill="url(#cyan)"/>
+
+    <!-- Stat 3 -->
+    <text x="20" y="144" font-family="Arial" font-size="11" fill="#94a3b8">Workflows Running</text>
+    <text x="220" y="144" font-family="Arial" font-size="13" fill="#a78bfa" text-anchor="end" font-weight="bold">5 / 5</text>
+    <rect x="20" y="150" width="200" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+    <rect x="20" y="150" width="200" height="4" rx="2" fill="#8b5cf6"/>
+
+    <!-- Stat 4 -->
+    <text x="20" y="180" font-family="Arial" font-size="11" fill="#94a3b8">Avg Response Time</text>
+    <text x="220" y="180" font-family="Arial" font-size="13" fill="#fbbf24" text-anchor="end" font-weight="bold">1.2s</text>
+    <rect x="20" y="186" width="200" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+    <rect x="20" y="186" width="60" height="4" rx="2" fill="#f59e0b"/>
+
+    <line x1="20" y1="208" x2="220" y2="208" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
+
+    <!-- Badges -->
+    <rect x="20" y="222" width="68" height="22" rx="11" fill="rgba(37,211,102,0.15)" stroke="rgba(37,211,102,0.4)" stroke-width="1"/>
+    <text x="54" y="237" font-family="Arial" font-size="9" fill="#25d366" text-anchor="middle">WhatsApp</text>
+
+    <rect x="96" y="222" width="52" height="22" rx="11" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
+    <text x="122" y="237" font-family="Arial" font-size="9" fill="#06b6d4" text-anchor="middle">n8n</text>
+
+    <rect x="156" y="222" width="64" height="22" rx="11" fill="rgba(139,92,246,0.15)" stroke="rgba(139,92,246,0.4)" stroke-width="1"/>
+    <text x="188" y="237" font-family="Arial" font-size="9" fill="#a78bfa" text-anchor="middle">OpenAI</text>
+
+    <rect x="20" y="252" width="72" height="22" rx="11" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+    <text x="56" y="267" font-family="Arial" font-size="9" fill="#fbbf24" text-anchor="middle">PostgreSQL</text>
+
+    <rect x="100" y="252" width="68" height="22" rx="11" fill="rgba(6,182,212,0.15)" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
+    <text x="134" y="267" font-family="Arial" font-size="9" fill="#06b6d4" text-anchor="middle">Chatwoot</text>
+
+    <rect x="176" y="252" width="44" height="22" rx="11" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.4)" stroke-width="1"/>
+    <text x="198" y="267" font-family="Arial" font-size="9" fill="#818cf8" text-anchor="middle">VPS</text>
+
+    <!-- Bottom label -->
+    <text x="120" y="294" font-family="Arial" font-size="10" fill="#475569" text-anchor="middle">Self-hosted · Zero vendor lock-in</text>
+  </g>
+</svg>

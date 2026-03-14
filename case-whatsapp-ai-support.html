@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp AI Support Agent - Case Study</title>
+  <link rel="stylesheet" href="assets/css/case.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="case-tags">
+        <span>n8n</span>
+        <span>OpenAI</span>
+        <span>Chatwoot</span>
+        <span>Meta API</span>
+        <span>PostgreSQL</span>
+      </div>
+      <h1>WhatsApp AI Support Agent</h1>
+      <p class="subtitle">
+        Customer service on autopilot, from first message to human handoff, fully automated via WhatsApp.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro Video -->
+  <section class="section video-section">
+    <div class="container">
+      <h2 style="margin-bottom: 40px; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px; color: #06b6d4; font-weight: 600;">See it in action</h2>
+      <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,0.15);">
+        <iframe
+          src="https://www.youtube.com/embed/GLZ_hT3ydfw?rel=0"
+          title="WhatsApp AI Support Agent Demo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="section">
+    <div class="container">
+      <h2>The Problem</h2>
+      <p>
+        The existing customer support system relied on a button-based chatbot and a live chat platform
+        embedded in the company's website and app. It worked, but it couldn't scale.
+      </p>
+
+      <div class="pain-points">
+        <div class="pain-item">
+          <h3>🔒 No Tool Access</h3>
+          <p>The AI agent had no access to external tools or internal systems, severely limiting what it could actually resolve for users.</p>
+        </div>
+
+        <div class="pain-item">
+          <h3>📂 Manual Knowledge Base</h3>
+          <p>Knowledge base required manual file uploads to stay current, a slow and error-prone process that left the bot frequently outdated.</p>
+        </div>
+
+        <div class="pain-item">
+          <h3>🔘 Button-Driven Flows</h3>
+          <p>Conversation flow driven by pre-set buttons, not user intent. Customers couldn't ask questions naturally, only pick from a menu.</p>
+        </div>
+
+        <div class="pain-item">
+          <h3>📵 No WhatsApp Support</h3>
+          <p>Customers had to access the company's own platform to get support. There was no WhatsApp channel, no way to meet users where they already are.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section class="section gray">
+    <div class="container">
+      <h2>The Solution</h2>
+      <p>
+        Built a custom automation architecture from scratch, replacing third-party chatbot platforms with
+        a fully orchestrated system where n8n is the brain, WhatsApp is the front door, and every
+        component talks to each other.
+      </p>
+
+      <div class="arch-details">
+        <h3>Core Design Decisions</h3>
+        <ul>
+          <li><strong>WhatsApp as the primary channel:</strong> where users already are, zero friction to start a conversation</li>
+          <li><strong>Chatwoot as the human agent interface:</strong> seamless fallback channel for complex cases</li>
+          <li><strong>n8n as the sole orchestrator:</strong> no vendor lock-in, full control over every workflow step</li>
+          <li><strong>PostgreSQL as the session and state store:</strong> persistent, queryable, and fast</li>
+          <li><strong>OpenAI for natural language understanding:</strong> real intent detection, not button menus</li>
+          <li><strong>Whisper for audio support:</strong> customers can send voice messages and get intelligent responses</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="section">
+    <div class="container">
+      <h2>Architecture: 5 Workflows</h2>
+      <p>Every workflow includes an Error Trigger → formatted error message → WhatsApp alert to admin.</p>
+
+      <div class="features-grid" style="margin-top: 60px;">
+        <div class="feature">
+          <h3>⚡ WF01 · Main Agent Flow</h3>
+          <p>Receives WhatsApp messages (text or audio), processes them through the AI agent, queries the real-time data API for showtimes and sessions, generates responses, and sends them back via Meta API. Manages session state in PostgreSQL on every interaction.</p>
+        </div>
+
+        <div class="feature">
+          <h3>🔄 WF02 · Cache Programming</h3>
+          <p>Handles scheduled cache refresh for 20,000+ session records using a Blue-Green swap strategy: one table is always live while the other is being rebuilt. Zero-downtime updates to the session store.</p>
+        </div>
+
+        <div class="feature">
+          <h3>⏱️ WF03 · Session Expiration</h3>
+          <p>Runs every minute via Schedule Trigger. Queries PostgreSQL for sessions inactive for more than 10 minutes, marks them as closed in session history and chat histories, resolves the conversation in Chatwoot, and removes any pending agent labels.</p>
+        </div>
+
+        <div class="feature">
+          <h3>🤝 WF04 · Human Handoff</h3>
+          <p>Triggered when the AI detects it cannot resolve the request. Transfers the conversation to a human agent in Chatwoot, assigns via round-robin, applies queue labels, and notifies the agent immediately.</p>
+        </div>
+
+        <div class="feature">
+          <h3>📋 WF05 · Queue Processing</h3>
+          <p>Manages the agent queue, assigns waiting conversations, tracks agent availability, and re-routes if the assigned agent is offline.</p>
+        </div>
+
+        <div class="feature">
+          <h3>🚨 Error Monitoring (All Workflows)</h3>
+          <p>Every single workflow has an Error Trigger node. On failure, it formats a detailed error message and sends an immediate WhatsApp notification to the admin. No silent failures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What the Agent Delivers -->
+  <section class="section gray">
+    <div class="container">
+      <h2>What the Agent Delivers</h2>
+
+      <div class="features-grid">
+        <div class="feature">
+          <h3>🎙️ Text & Audio Support</h3>
+          <p>Responds to both text and voice messages via WhatsApp, with Whisper transcription handling audio inputs seamlessly.</p>
+        </div>
+
+        <div class="feature">
+          <h3>🎬 Real-Time Data</h3>
+          <p>Answers questions about policies, schedules, and availability by querying a live internal API on every session request, always up to date.</p>
+        </div>
+
+        <div class="feature">
+          <h3>🔗 Purchase Links</h3>
+          <p>Sends direct purchase links for specific sessions or products, reducing friction and guiding users straight to conversion.</p>
+        </div>
+
+        <div class="feature">
+          <h3>🧠 Smart Handoff</h3>
+          <p>Detects when human support is needed and routes automatically to an available agent in Chatwoot via round-robin assignment.</p>
+        </div>
+
+        <div class="feature">
+          <h3>📊 Queue Management</h3>
+          <p>Manages conversation queues and agent assignment end-to-end, including re-routing when agents go offline.</p>
+        </div>
+
+        <div class="feature">
+          <h3>🧹 Auto Session Cleanup</h3>
+          <p>Closes idle sessions automatically after 10 minutes, resolves Chatwoot tickets, and keeps the system clean without manual intervention.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Highlights -->
+  <section class="section">
+    <div class="container">
+      <h2>Technical Highlights</h2>
+
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-value">5</div>
+          <div class="metric-label">Automated Workflows</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">20K+</div>
+          <div class="metric-label">Session Records Managed</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">10 min</div>
+          <div class="metric-label">Auto Session Expiry</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">100%</div>
+          <div class="metric-label">n8n Orchestrated</div>
+        </div>
+      </div>
+
+      <div class="arch-details">
+        <h3>Under the Hood</h3>
+        <ul>
+          <li><strong>Session management:</strong> PostgreSQL, 20K+ records, auto-expire at 10 min inactivity</li>
+          <li><strong>Cache strategy:</strong> Blue-Green swap, zero downtime on cache refresh</li>
+          <li><strong>Audio support:</strong> Whisper transcription integrated in WF01</li>
+          <li><strong>Human handoff:</strong> Chatwoot API + round-robin assignment</li>
+          <li><strong>Error monitoring:</strong> Every workflow has error capture → WhatsApp alert to admin</li>
+          <li><strong>Real-time data:</strong> Cinema API queried on every session request</li>
+          <li><strong>Orchestration:</strong> 100% n8n, no custom backend needed</li>
+          <li><strong>Knowledge base:</strong> Agent queries a structured knowledge base maintained directly inside the company's ERP, always reflecting the latest content without manual sync</li>
+          <li><strong>ERP integration:</strong> Session and chat histories are imported into the ERP after each conversation, giving the support team full visibility and management of all interactions in one place</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="section gray">
+    <div class="container">
+      <h2>Technical Stack</h2>
+
+      <div class="tech-stack">
+        <div class="tech-item">
+          <strong>Orchestration</strong>
+          <p>n8n: self-hosted workflow automation, sole orchestrator for all 5 workflows</p>
+        </div>
+        <div class="tech-item">
+          <strong>AI / LLM</strong>
+          <p>OpenAI GPT for natural language responses + Whisper for voice message transcription</p>
+        </div>
+        <div class="tech-item">
+          <strong>Messaging</strong>
+          <p>Meta API (official): WhatsApp Business integration for inbound and outbound messages</p>
+        </div>
+        <div class="tech-item">
+          <strong>Agent Interface</strong>
+          <p>Chatwoot: human agent console for fallback support and conversation management</p>
+        </div>
+        <div class="tech-item">
+          <strong>Database</strong>
+          <p>PostgreSQL: session state, conversation history, cache tables with Blue-Green swap strategy</p>
+        </div>
+        <div class="tech-item">
+          <strong>Infrastructure</strong>
+          <p>Docker + Coolify on self-hosted VPS: full control, data privacy, zero vendor lock-in</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Interested in a Similar Solution?</h2>
+      <a href="index.html#contact" class="cta-button">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Rafael Suman. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

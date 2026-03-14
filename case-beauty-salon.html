@@ -26,24 +26,8 @@
       </div>
       <h1>Beauty Salon BI System</h1>
       <p class="subtitle">
-        Automated data pipeline processing 500+ daily transactions with real-time analytics and client retention tracking
+        Automated daily BI pipeline with per-collaborator earnings tracking, client retention automation, and weekly WhatsApp reporting to the owner.
       </p>
-    </div>
-  </section>
-
-  <!-- Intro Video -->
-  <section class="section video-section">
-    <div class="container">
-      <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,0.15);">
-        <iframe
-          src="https://www.youtube.com/embed/aqz-KE-bpKQ?rel=0"
-          title="Project Overview"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;">
-        </iframe>
-      </div>
     </div>
   </section>
 
@@ -52,25 +36,28 @@
     <div class="container">
       <h2>The Challenge</h2>
       <p>
-        A beauty salon using the Trinks platform needed real-time visibility into business operations, 
-        professional performance tracking, and proactive client retention management to stay competitive 
-        in a crowded market.
+        The Trinks platform already provided basic earning summaries to the owner. But that wasn't enough. The business needed richer analytics, per-collaborator breakdowns with proper revenue attribution, client recurrence tracking, and automated actions when things weren't going well.
       </p>
-      
+
       <div class="pain-points">
         <div class="pain-item">
-          <h3>📊 No Data Visibility</h3>
-          <p>Manual spreadsheet updates were error-prone, time-consuming, and always outdated by the time they were completed.</p>
+          <h3>💰 Limited Native Reporting</h3>
+          <p>Trinks showed basic totals, but had no way to accurately break down how much each collaborator actually generated, especially for services shared between professionals in the same transaction.</p>
         </div>
-        
+
         <div class="pain-item">
-          <h3>👥 Performance Tracking</h3>
-          <p>No way to accurately track individual professional revenue contribution and productivity metrics.</p>
+          <h3>🔄 Client Recurrence Blind Spot</h3>
+          <p>No tracking of how often clients returned. Churned clients were only noticed long after they had stopped coming in.</p>
         </div>
-        
+
         <div class="pain-item">
-          <h3>🔄 Client Retention</h3>
-          <p>Reactive approach to client retention - only noticed churned clients after they had already left.</p>
+          <h3>📵 No Retention Action</h3>
+          <p>When a client stopped showing up, nothing happened. No message, no offer, no re-engagement trigger.</p>
+        </div>
+
+        <div class="pain-item">
+          <h3>📊 No Weekly Overview</h3>
+          <p>The owner had no consolidated view of how the week went, how the month was tracking, or how each professional was performing.</p>
         </div>
       </div>
     </div>
@@ -82,9 +69,7 @@
       <h2>The Solution</h2>
       <img src="assets/images/salon-flow.png" alt="System Architecture" class="full-img">
       <p>
-        Built a complete end-to-end BI pipeline that automatically extracts data from Trinks API every morning, 
-        transforms it through N8N workflows, stores it in a MySQL data warehouse with constellation schema, 
-        and delivers insights via Power BI dashboards and automated WhatsApp reports to the salon owner.
+        Built a complete end-to-end BI pipeline that runs every morning, extracting the previous day's transactions from the Trinks API, transforming them through N8N workflows, and persisting the data in a MySQL data warehouse. The owner gets a Power BI dashboard updated daily and an automated WhatsApp report every Monday morning.
       </p>
     </div>
   </section>
@@ -94,7 +79,7 @@
     <div class="container">
       <h2>Data Warehouse Architecture</h2>
       <img src="assets/images/salon-schema.png" alt="Database Schema" class="full-img">
-      
+
       <div class="arch-details">
         <h3>Constellation Schema Design</h3>
         <ul>
@@ -113,26 +98,26 @@
   <section class="section gray">
     <div class="container">
       <h2>Key Features</h2>
-      
+
       <div class="features-grid">
         <div class="feature">
-          <h3>⚡ Automated Pipeline</h3>
-          <p>Runs daily at 7 AM, fetching the last 48 hours of transactions. Processes 500-800 records daily with zero manual intervention and automatic error notifications via WhatsApp.</p>
+          <h3>⚡ Automated Daily Pipeline</h3>
+          <p>Runs every morning at 7 AM, extracting the previous day's transactions from the Trinks API and persisting them in the MySQL data warehouse. Zero manual intervention, with automatic error notifications via WhatsApp.</p>
         </div>
-        
+
         <div class="feature">
           <h3>💰 Revenue Attribution</h3>
-          <p>Proprietary proportional algorithm distributes total transaction value across services based on price ratio, enabling accurate professional earnings tracking even for shared transactions.</p>
+          <p>Proprietary proportional algorithm distributes total transaction value across services based on price ratio, enabling accurate per-collaborator earnings tracking even for shared transactions.</p>
         </div>
-        
+
         <div class="feature">
-          <h3>📱 WhatsApp Reports</h3>
-          <p>Owner receives automated weekly reports with key metrics, top performers, at-risk client alerts, and revenue trends directly on WhatsApp.</p>
+          <h3>📱 Weekly WhatsApp Report</h3>
+          <p>Every Monday morning the owner receives an automated WhatsApp message with last week's summary, month-to-date performance, and how much each collaborator produced during the period.</p>
         </div>
-        
+
         <div class="feature">
-          <h3>🎯 Client Retention</h3>
-          <p>Automatic status classification system: Active (≤40 days since last visit), At Risk (41-90 days), Inactive (>90 days). Enables proactive retention campaigns.</p>
+          <h3>🎯 Client Retention Automation</h3>
+          <p>Clients are automatically classified as Active (up to 40 days since last visit), At Risk (41-90 days), or Inactive (over 90 days). When a client becomes At Risk, an automated WhatsApp message is sent with a personalized offer to bring them back.</p>
         </div>
       </div>
     </div>
@@ -142,19 +127,19 @@
   <section class="section">
     <div class="container">
       <h2>Results & Business Impact</h2>
-      
+
+      <p>
+        For the first time, the owner had a clear and accurate picture of how much each collaborator was actually generating, updated every morning without any manual effort. That visibility alone changed how the business was managed. The numbers followed.
+      </p>
+
       <div class="metrics">
         <div class="metric">
-          <div class="metric-value">49.7%</div>
-          <div class="metric-label">Client Recurrence Rate</div>
+          <div class="metric-value">+13%</div>
+          <div class="metric-label">Client Recurrence Rate in the First Month</div>
         </div>
         <div class="metric">
-          <div class="metric-value">258</div>
-          <div class="metric-label">Unique Clients/Month</div>
-        </div>
-        <div class="metric">
-          <div class="metric-value">R$ 50.6K</div>
-          <div class="metric-label">Monthly Revenue Tracked</div>
+          <div class="metric-value">+11%</div>
+          <div class="metric-label">Average Ticket Growth</div>
         </div>
         <div class="metric">
           <div class="metric-value">100%</div>
@@ -162,12 +147,13 @@
         </div>
       </div>
 
-      <img src="assets/images/salon-dashboard.png" alt="Power BI Dashboard" class="full-img">
-      
+      <div style="position:relative; display:block;">
+        <img src="assets/images/salon-dashboard.png" alt="Power BI Dashboard" class="full-img" style="display:block;">
+        <div style="position:absolute; top:1.5%; left:2.5%; width:8%; height:7%; background:#111827; border-radius:4px;"></div>
+      </div>
+
       <p style="margin-top: 40px;">
-        The dashboard provides real-time insights into revenue by day of week, top-performing services, 
-        professional productivity comparison, month-over-month growth trends, and client retention metrics. 
-        Interactive filters allow deep-dive analysis by time period, professional, and service type.
+        The dashboard refreshes every morning with the previous day's data, showing revenue by day of week, top-performing services, per-collaborator productivity, month-over-month trends, and client retention metrics. Interactive filters allow deep-dive analysis by time period, professional, and service type.
       </p>
     </div>
   </section>
@@ -176,7 +162,7 @@
   <section class="section gray">
     <div class="container">
       <h2>Technical Stack</h2>
-      
+
       <div class="tech-stack">
         <div class="tech-item">
           <strong>Data Source</strong>
@@ -192,11 +178,11 @@
         </div>
         <div class="tech-item">
           <strong>Visualization</strong>
-          <p>Power BI - DirectQuery mode for real-time dashboard updates</p>
+          <p>Power BI - Connected to MySQL DW, refreshed daily by the ETL pipeline</p>
         </div>
         <div class="tech-item">
           <strong>Notifications</strong>
-          <p>WhatsApp Business API - Automated reports and error alerts via Evolution API</p>
+          <p>Evolution API - WhatsApp integration for weekly owner reports and at-risk client retention messages</p>
         </div>
         <div class="tech-item">
           <strong>Infrastructure</strong>
@@ -214,7 +200,7 @@
     </div>
   </section>
 
-<!-- Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <p>© 2025 Rafael Suman. All rights reserved.</p>
